@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9,10">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>its all about me by eric schorr @jerseyschorr</title>
+    <link href="css/portfolio.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Eric Schorr">
+    <script src="build/heart.js"></script>
+</head>
+
+<body>
+
+<div class="imageholder">
+    <img src="images/eric2.jpg" class="image" />
+    <h2 class="title"><span>Eric Schorr</span></h2>
+</div>
+
+<div class="section heart">
+    <pre id="heart"></pre>
+    <script>
+</div>
+<script type="text/javascript">
+    function f(c) {
+        return c.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+        function dHeart(s) {
+            var y;
+            var p = 0;
+            var m = ["&nbsp;", "\n"];
+            var c = [
+                 2,0, 2, 1,
+                 2,0, 2, 1,
+                 2,0, 2, 1,
+
+                 2,1,
+                 2,1,
+                 2,1,
+                 2,1,
+                 2,1,
+
+                2,1,
+                2,1,
+                2,1,
+                2,1,
+                2,1,
+                2,1,
+                2,1,
+                2,1,
+                2,1,
+                2,1,
+                2];
+
+            var x = [
+                8,9,10,1,
+                14,3,14,1,
+                17,1,17,1,
+
+                37,1,
+                39,1,
+                39,1,
+                39,1,
+
+                37,1,
+                35,1,
+                33,1,
+
+                31,1,
+                27,1,
+                23,1,
+                19,1,
+                15,1,
+                11,1,
+                7,1,
+
+                3,1,
+                1];
+            var out = [];
+            var z = -1;
+            var l = s.length;
+            for (var d = 0; d < c.length; d+=1) {
+                y = x[d];
+                while (y > 0) {
+                    if (c[d] === 2) {
+                        out[++z] = (p < l) ? f(s[p++]) : '';
+                    } else {
+                        out[++z] = m[c[d]];
+                    }
+                    y-=1;
+                }
+            }
+            document.getElementById("heart").innerHTML = out.join("");
+        }
+    dHeart(dHeart.toString().replace(/\s+/g, '').replace(/var/g, 'var '));
+</script>
+</div>
+
+
+</body>
+</html>
+
