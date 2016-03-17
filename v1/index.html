@@ -1,0 +1,426 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>its all about me by eric schorr @jerseyschorr</title>
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+    <link href="css/impress-demo.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+
+-->
+<div id="impress">
+
+    <div id="welcome" class="step slide" data-x="-1000" data-y="-1500">
+        <img src="images/eric2.jpg" class="image floatLeft" />
+        <h2 class="titleOffset">its all about me</h2>
+        <q>Eric Schorr</q>
+    </div>
+
+    <div id="title" class="step slide" data-x="0" data-y="-1500">
+        <div class="heartContainer"><pre id="heart"></pre></div>
+        <script type="text/javascript">
+            function f(c) {
+                return c.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            }
+            function dHeart(s) {
+                var y;
+                var p = 0;
+                var m = ["&nbsp;", "\n"];
+                var c = [
+                     2,0, 2, 1,
+                     2,0, 2, 1,
+                     2,0, 2, 1,
+
+                     2,1,
+                     2,1,
+                     2,1,
+                     2,1,
+                     2,1,
+
+                    2,1,
+                    2,1,
+                    2,1,
+                    2,1,
+                    2,1,
+                    2,1,
+                    2,1,
+                    2,1,
+                    2,1,
+                    2,1,
+                    2];
+
+                var x = [
+                    8,9,10,1,
+                    14,3,14,1,
+                    17,1,17,1,
+
+                    37,1,
+                    39,1,
+                    39,1,
+                    39,1,
+
+                    37,1,
+                    35,1,
+                    33,1,
+
+                    31,1,
+                    27,1,
+                    23,1,
+                    19,1,
+                    15,1,
+                    11,1,
+                    7,1,
+
+                    3,1,
+                    1];
+                var out = [];
+                var z = -1;
+                var l = s.length;
+                for (var d = 0; d < c.length; d+=1) {
+                    y = x[d];
+                    while (y > 0) {
+                        if (c[d] === 2) {
+                            out[++z] = (p < l) ? f(s[p++]) : '';
+                        } else {
+                            out[++z] = m[c[d]];
+                        }
+                        y-=1;
+                    }
+                }
+                document.getElementById("heart").innerHTML = out.join("");
+            }
+        dHeart(dHeart.toString().replace(/\s+/g, '').replace(/var/g, 'var '));
+        </script>
+    </div>
+
+
+    <div id="cube" class="step slide" data-x="0" data-y="-1500" data-z="-1000">
+        <div class="cubeContainer">
+            <img src="images/cube.png"/>
+        </div>
+    </div>
+
+    <div id="mega" class="step" data-x="0" data-y="-1500" data-z="-2000">
+        <b class="lead">Lead</b><br><b class="games">Games</b><br><b class="dev">Developer</b>
+
+        <q class="how">BUT HOW DID I GET HERE?</q>
+    </div>
+
+    <div id="t96" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/blp.png" />
+        <div class="timeline row">
+            <div class="cell time0">1996 <span class="small">SUMMER</span></div>
+        </div>
+    </div>
+<!--
+    <div id="t96a" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/blp.png"/>
+        <div class="timeline row">
+            <div class="cell time0">1996 - 1999</div>
+        </div>
+    </div>
+-->
+    <div id="t99a" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/crosslinks.png" />
+        <div class="timeline row">
+            <div class="cell time1">1999</div>
+        </div>
+    </div>
+
+    <div id="t99b" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/ru.png" />
+        <div class="timeline row">
+            <div class="cell time1">1999</div>
+        </div>
+    </div>
+
+
+    <div id="t00" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/csco.png" />
+        <div class="timeline row">
+            <div class="cell time2">2000</div>
+        </div>
+    </div>
+
+    <div id="t01" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/uk.png" />
+        <div class="timeline row">
+            <div class="cell time3">2001</div>
+        </div>
+    </div>
+
+    <div id="t00" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/csco.png" />
+        <div class="timeline row">
+            <div class="cell time3">2001</div>
+        </div>
+    </div>
+
+
+    <div id="t06" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/voss.png" />
+        <div class="timeline row">
+            <div class="cell time4">2006</div>
+        </div>
+    </div>
+
+    <div id="t07" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/us.png" />
+        <div class="timeline row">
+            <div class="cell time5">2007</div>
+        </div>
+    </div>
+
+    <div id="t07a" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/leh.png" />
+        <div class="timeline row">
+            <div class="cell time5">2007</div>
+        </div>
+    </div>
+
+
+    <div id="t08" class="step" data-x="1000" data-y="-1500" data-scale="5">
+        <img src="images/nyt.png" width />
+        <div class="timeline row">
+            <div class="cell time6">2008</div>
+        </div>
+    </div>
+
+<div id="projects1" class="step projects" data-x="850" data-y="3000" data-rotate="90" data-scale="4">
+    <div class="clearfix">
+        <div class="proj">
+            <h2>Content API &amp; Integration</h2>
+            <ul class="plist">
+                <li>&gt; NYTimes Transformer</li> <!--php, mySql, oracle, maps ,mf -->
+                <li>&gt; Weddings &amp; Event Listings System</li> <!--php, mySql, XSLT-->
+                <li>&gt; Classified Ads Feeds</li> <!-- perl -->
+            </ul>
+            <h2 class="light">Ecommerce &amp; User Prefs</h2> <!--php, REST, mysql, CTX, JS, prototype, COBOL, python -->
+            <h2 class="light">Client/Web Technologies</h2> <!-- php, REST, JS jQuery -->
+            <h2 class="light">Games Platform</h2> <!-- HTML5, CSS3, NODE, -->
+        </div>
+        <div class="ilist">
+            <ul class="icons">
+                <li><img src="images/php.png"></li>
+                <li><img src="images/mysql.png"></li>
+                <li><img class="wbg" src="images/oracle.png"></li>
+                <li><img src="images/maps.jpg"></li>
+                <li><img src="images/mf.png"></li>
+                <li class="lang">XSLT</li>
+                <li><img src="images/perl_logo.jpg"></li>
+                <li class="grayout lang">REST</li>
+                <li class="grayout lang">CTX</li>
+                <li class="grayout"><img src="images/js.png"></li>
+                <li class="grayout"><img src="images/prototype.gif"></li>
+                <li class="grayout"><img src="images/cobol.png"></li>
+                <li class="grayout"><img src="images/python.jpeg"></li>
+                <li class="grayout lang"><img src="images/jquery-logo.png"></li>
+                <li class="grayout wbg"><img src="images/html5.png"></li>
+                <li class="grayout wbg"><img src="images/css3.png"></li>
+                <li class="grayout"><img src="images/node.png"></li>
+                <li class="grayout wbg"><img src="images/coffeescript.png"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div id="projects2" class="step projects" data-x="850" data-y="3000" data-rotate="90" data-scale="4">
+        <div class="clearfix">
+            <div class="proj">
+            <h2 class="light">Content API &amp; Integration</h2>
+            <h2>Ecommerce &amp; User Prefs</h2>
+            <ul class="plist">
+                <li>&gt; Homepage Personalization Widgets</li>
+                <li>&gt; Extensible Storage Platform</li>
+                <li>&gt; Customer Service Integration</li>
+            </ul>
+            <h2 class="light">Client/Web Technologies</h2>
+            <h2 class="light">Games Platform</h2>
+        </div>
+        <div class="ilist"><!--php, REST, mysql, CTX, JS, prototype, COBOL, python -->
+            <ul class="icons">
+                <li><img src="images/php.png"></li>
+                <li><img src="images/mysql.png"></li>
+                <li class="grayout"><img class="wbg" src="images/oracle.png"></li>
+                <li class="grayout"><img src="images/maps.jpg"></li>
+                <li class="grayout"><img src="images/mf.png"></li>
+                <li class="grayout lang">XSLT</li>
+                <li class="grayout"><img src="images/perl_logo.jpg"></li>
+                <li class="lang">REST</li>
+                <li class="lang">CTX</li>
+                <li><img src="images/js.png"></li>
+                <li><img src="images/prototype.gif"></li>
+                <li><img src="images/cobol.png"></li>
+                <li><img src="images/python.jpeg"></li>
+                <li class="grayout"><img src="images/jquery-logo.png"></li>
+                <li class="grayout wbg"><img src="images/html5.png"></li>
+                <li class="grayout wbg"><img src="images/css3.png"></li>
+                <li class="grayout"><img src="images/node.png"></li>
+                <li class="grayout wbg"><img src="images/coffeescript.png"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="projects3" class="step projects" data-x="850" data-y="3000" data-rotate="90" data-scale="4">
+        <div class="clearfix">
+            <div class="proj">
+            <h2 class="light">Content API &amp; Integration</h2>
+            <h2 class="light">Ecommerce &amp; User Prefs</h2>
+            <h2>Client/Web Technologies</h2>
+            <ul class="plist">
+                <li>&gt; Commenting Engine FE</li>
+                <li>&gt; Arts &amp; Entertainment Guide</li>
+                <li>&nbsp;</li>
+            </ul>
+            <h2 class="light">Games Platform</h2>
+        </div>
+        <div class="ilist"><!--php, REST, mysql, CTX, JS, prototype, COBOL, python -->
+            <ul class="icons">
+                <li><img src="images/php.png"></li>
+                <li class="grayout"><img src="images/mysql.png"></li>
+                <li class="grayout"><img class="wbg" src="images/oracle.png"></li>
+                <li class="grayout"><img src="images/maps.jpg"></li>
+                <li class="grayout"><img src="images/mf.png"></li>
+                <li class="grayout lang">XSLT</li>
+                <li class="grayout"><img src="images/perl_logo.jpg"></li>
+                <li class="lang">REST</li>
+                <li class="grayout lang">CTX</li>
+                <li><img src="images/js.png"></li>
+                <li class="grayout"><img src="images/prototype.gif"></li>
+                <li class="grayout"><img src="images/cobol.png"></li>
+                <li class="grayout"><img src="images/python.jpeg"></li>
+                <li><img src="images/jquery-logo.png"></li>
+                <li class="grayout wbg"><img src="images/html5.png"></li>
+                <li class="grayout wbg"><img src="images/css3.png"></li>
+                <li class="grayout"><img src="images/node.png"></li>
+                <li class="grayout wbg"><img src="images/coffeescript.png"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="projects4" class="step projects" data-x="850" data-y="3000" data-rotate="90" data-scale="4">
+        <div class="clearfix">
+            <div class="proj">
+            <h2 class="light">Content API &amp; Integration</h2>
+            <h2 class="light">Ecommerce &amp; User Prefs</h2>
+            <h2 class="light">Client/Web Technologies</h2>
+            <h2>Games Platform</h2>
+            <ul class="plist">
+                <li>&gt; HTML5 Crosswords Game</li>
+                <li>&gt; New Games Section Front</li>
+                <li>&gt; Mobile &amp; Facebook Apps</li>
+            </ul>
+        </div>
+        <div class="ilist"><!--php, REST, mysql, CTX, JS, prototype, COBOL, python -->
+            <ul class="icons">
+                <li><img src="images/php.png"></li>
+                <li class="grayout"><img src="images/mysql.png"></li>
+                <li class="grayout"><img class="wbg" src="images/oracle.png"></li>
+                <li class="grayout"><img src="images/maps.jpg"></li>
+                <li class="grayout"><img src="images/mf.png"></li>
+                <li class="grayout lang">XSLT</li>
+                <li class="grayout"><img src="images/perl_logo.jpg"></li>
+                <li class="lang">REST</li>
+                <li class="grayout lang">CTX</li>
+                <li><img src="images/js.png"></li>
+                <li class="grayout"><img src="images/prototype.gif"></li>
+                <li class="grayout"><img src="images/cobol.png"></li>
+                <li class="grayout"><img src="images/python.jpeg"></li>
+                <li><img src="images/jquery-logo.png"></li>
+                <li class="wbg"><img src="images/html5.png"></li>
+                <li class="wbg"><img src="images/css3.png"></li>
+                <li><img src="images/node.png"></li>
+                <li class="wbg"><img src="images/coffeescript.png"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="whyNYT" class="step stepShowInactive" data-x="-1600" data-y="4000" data-rotate="90" data-scale="5">
+    <h2>Why The New York Times?</h2>
+</div>
+
+<div id="whyNYT1" class="step stepShowInactive" data-x="-2050" data-y="4000" data-rotate="90" data-scale="5">
+    <h1>&gt; Work / Life Balance</h1>
+</div>
+<div id="whyNYT2" class="step stepShowInactive" data-x="-2300" data-y="4000" data-rotate="90" data-scale="5">
+    <h1>&gt; Location, Location, Location</h1>
+</div>
+<div id="whyNYT3" class="step stepShowInactive" data-x="-2550" data-y="4000" data-rotate="90" data-scale="5">
+    <h1>&gt; Great People</h1>
+</div>
+<div id="whyNYT4" class="step stepShowInactive" data-x="-2800" data-y="4000" data-rotate="90" data-scale="5">
+    <h1>&gt; Innovation</h1>
+</div>
+<div id="whyNYT5" class="step stepShowInactive" data-x="-3050" data-y="4000" data-rotate="90" data-scale="5">
+    <h1>&gt; Code === Fun</h1>
+</div>
+<div id="whyNYT6" class="step stepShowInactive" data-x="-3300" data-y="4000" data-rotate="90" data-scale="5">
+    <h1>&gt; The Paper</h1>
+</div>
+<div id="whyNYT7" class="step stepShowInactive" data-x="-3550" data-y="4000" data-rotate="90" data-scale="5">
+    <h1>&gt; The Challenges</h1>
+</div>
+
+<div id="fun" class="step stepShowInactive" data-x="-4550" data-y="4000" data-rotate="90" data-scale="3">
+    <h2>!work</h2>
+    <blockquote>
+        free coffee &middot; swag &middot; t-shirts &middot; games night &middot; book club &middot; baking club
+        &middot; beta620 &middot; farnsworth &middot; pmjs &middot; regular (js|php) gathering &middot; code drop &middot;
+        monthly celebrations &middot; foosball table &middot; ping ping &middot; softball team &middot; celebrity sightings &middot; r&amp;d talks &middot;
+        timesopen &middot; 100% day &middot; free paper &middot; free backrubs &middot; times talks &middot; the couches &middot; the gallery &middot;
+        corp. discounts &middot; napping room
+    </blockquote>
+</div>
+
+<div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
+    <p><b>?</b></p>
+    <p>@jerseyschorr</p>
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) {
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>
+

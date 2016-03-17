@@ -1,0 +1,279 @@
+* { margin: 0; padding: 0; }
+
+/*---------------------------------
+Fonts
+-------------------------------- */
+
+@font-face {
+	font-family: 'Orbitron';
+	src: url('fonts/orbitron/orbitron-bold.eot');
+	src: url(//:) format('no404'), url('fonts/orbitron/orbitron-bold.woff') format('woff'), url('fonts/orbitron/orbitron-bold.ttf') format('truetype');
+	}
+
+@font-face {
+	font-family: 'Miso';
+	src: url('fonts/miso/miso.eot');
+	src: url(//:) format('no404'), url('fonts/miso/miso.woff') format('woff'), url('fonts/miso/miso.ttf') format('truetype');
+	}
+
+@font-face {
+	font-family: 'Sansation';
+	src: url('fonts/sansation/Sansation_Bold.eot');
+	src: url(//:) format('no404'), url('fonts/sansation/Sansation_Bold.woff') format('woff'), url('fonts/sansation/Sansation_Bold.ttf') format('truetype');
+	}
+
+
+/*---------------------------------
+Frame
+-------------------------------- */
+
+#frame {
+	width: 700px;
+	height: 900px;
+	background: #207a80;
+	margin: 20px auto 0 auto;
+	text-align: center;
+	-moz-box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0.5);
+	}
+
+#title, #subtitle, li {
+	position: relative;
+	}
+
+
+/*---------------------------------
+Title
+-------------------------------- */
+
+#title {
+	display: block;
+	border-top: 20px solid rgba(255, 255, 255, 0.5);
+	height: 300px;
+	width: 120%;
+	padding: 20px 0 0 0;
+	margin: 0 0 0 -70px;
+	-moz-transform: rotate(-7deg);
+	-moz-box-shadow:
+		inset 0 30px 0 0 rgba(255, 255, 255, 0.05),
+		inset 0 60px 0 0 rgba(255, 255, 255, 0.05),
+		inset 0 90px 0 0 rgba(255, 255, 255, 0.05),
+		inset 0 120px 0 0 rgba(255, 255, 255, 0.05),
+		inset 0 150px 0 0 rgba(255, 255, 255, 0.05),
+		inset 0 180px 0 0 rgba(255, 255, 255, 0.05),
+		inset 0 210px 0 0 rgba(255, 255, 255, 0.05),
+		inset 0 240px 0 0 rgba(255, 255, 255, 0.05);
+	}
+
+#title strong {
+	font: italic 400px Orbitron, Arial, sans-serif;
+	line-height: 300px;
+	color: #fff;
+	background: rgba(202, 225, 49, 1);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	display: block;
+	width: 395px;
+	height: 395px;
+	position: absolute;
+	left: 130px;
+	border: 15px solid rgba(255, 255, 255, 0.2);
+	-moz-box-sizing: border-box;
+	text-shadow: 5px 0 0 rgba(202, 225, 49, 1), 4px -4px 0 rgba(202, 225, 49, 1);
+	}
+
+#title span {
+	position: absolute;
+	display: block;
+	font: italic 40px Orbitron, Arial, sans-serif;
+	text-transform: uppercase;
+	word-spacing: 60px;
+	top: 105px;
+	left: 316px;
+	}
+
+#title em {
+	position: absolute;
+	display: block;
+	font: italic 120px Orbitron, Arial, sans-serif;
+	left: 148px;
+	top: 132px;
+	text-transform: lowercase;
+	text-shadow: 5px 5px 0 #fff;
+	}
+
+
+
+/*---------------------------------
+Sub-Title
+-------------------------------- */
+
+#subtitle {
+	display: block;
+	font: 26px/30px Sansation, Arial, sans-seri;
+	color: #fff;
+	text-align: right;
+	text-transform: lowercase;
+	background: rgba(225, 144, 49, 0.4);
+	border: 2px solid rgba(225, 144, 49, 1);
+	border-right: none;
+	padding: 10px 60px 10px 0;
+	margin: 0 0 0 390px;
+	-webkit-border-top-left-radius: 40px;
+	-webkit-border-bottom-left-radius: 40px;
+	-moz-border-radius-topleft: 40px;
+	-moz-border-radius-bottomleft: 40px;
+	border-top-left-radius: 40px;
+	border-bottom-left-radius: 40px;
+	}
+
+
+
+/*---------------------------------
+List
+-------------------------------- */
+
+ol {
+	margin: 60px 60px 0 60px;
+	text-align: left;
+	background: #fff;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding: 20px 40px;
+	font: 20px/28px Miso, Arial, sans-serif;
+	-moz-transform: rotate(-1.5deg);
+	}
+
+li {
+	-moz-transform: rotate(1.5deg);
+	}
+
+#cue {
+	background: #207a80;
+	width: 80px;
+	height: 90px;
+	margin: 0 0 0 300px;
+	-webkit-border-bottom-left-radius: 40px;
+	-moz-border-radius-bottomleft: 40px;
+	border-bottom-left-radius: 40px;
+	-moz-box-shadow:
+		inset 50px 0 0 0 #fff;
+	}
+
+
+/*---------------------------------
+Robot
+-------------------------------- */
+
+#robot {
+	xbackground: red;
+	position: relative;
+	width: 200px;
+	height: 200px;
+	margin: -74px 0 0 320px;
+	}
+
+.head {
+	width: 60px;
+	height: 100px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.7);
+	top: 0;
+	left: 70px;
+	position: absolute;
+	border: 2px solid #fff;
+	z-index: 3;
+	-moz-box-shadow:
+		inset 4px 5px 0 0 rgba(255, 255, 255, 0.3),
+		inset -15px -8px 0 0 rgba(255, 255, 255, 0.1),
+		inset 0 -10px 40px 0 rgba(0,0,0,0.5),
+		0 3px 10px 0 rgba(0,0,0,0.5);
+	}
+
+.body {
+	width: 130px;
+	height: 60px;
+	background: rgba(0,0,0,0.7);
+	position: absolute;
+	top: 110px;
+	left: 30px;
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topleft: 20px;
+	-moz-border-radius-topright: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border: 2px solid #fff;
+	border-bottom: none;
+	z-index: 2;
+	-moz-box-shadow:
+		inset 10px 5px 0 0 rgba(255, 255, 255, 0.3),
+		inset -40px 0px 0 0 rgba(255, 255, 255, 0.1),
+		inset 0 -10px 40px 0 rgba(0,0,0,0.5),
+		0 3px 10px 0 rgba(0,0,0,0.5);
+	color: #fff;
+	font: 30px Miso, sans-serif;
+	padding: 20px 10px 0 0;
+	text-shadow: 0 0 3px #000, 0 1px 0 rgba(255,255,255,0.2);
+	}
+
+#eye1,
+#eye2 {
+	width: 20px;
+	height: 20px;
+	background: rgba(224, 217, 49, 1);
+	top: 25px;
+	position: absolute;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-moz-box-shadow:
+		inset 0 2px 0 3px rgba(255, 255, 255, 1),
+		0 2px 3px 0 rgba(0,0,0,0.8);
+	}
+
+#eye2 {
+	left: 30px;
+	}
+
+.pupil {
+	background: #000;
+	width: 8px;
+	height: 8px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	position: absolute;
+	}
+
+#eye1 .pupil {
+	top: 9px;
+	left: 3px;
+	}
+
+#eye2 .pupil {
+	top: 7px;
+	left: 9px;
+	}
+
+.head table {
+	border-collapse: collapse;
+	background: rgba(224, 217, 49, 1);
+	border: 1px solid #fff;
+	position: absolute;
+	top: 65px;
+	left: 8px;
+	-moz-box-shadow:
+		inset 0 2px 3px 0 rgba(0,0,0,0.5),
+		inset 0 -2px 3px 0 rgba(0,0,0,0.5);
+	}
+
+.head table td {
+	width: 7px;
+	height: 7px;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #fff;
+	}
