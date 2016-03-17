@@ -15,8 +15,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    "build/beer.js": "lib/beer.es6",
-                    "build/beerlist.js": "lib/beerlist.es6"
+                    'js/heart.js': 'lib/heart.es6'
                 }
             }
         }
