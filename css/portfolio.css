@@ -1,11 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300|Luckiest+Guy);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100|Luckiest+Guy);
 
 
 body {
     margin: 0;
     min-width: 320px;
     font-size: 10px;
-    font-family: 'Lato',Arial,sans-serif;
+    font-family: 'Lato', sans-serif;
 
     line-height: 1;
     background:
@@ -40,24 +40,50 @@ table {
 .imageholder {
 	position: relative;
 }
+
 .image {
-   width: 100%;
+  display: block;
+  max-width: 100%;
+  max-height: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-h2.title {
+h1, h2 {
+   font-family: 'Luckiest Guy', Sans-Serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 5.5em;
+  line-height: 0.87em;
+}
+
+.titleCard {
    position: absolute;
-   top: 20%;
+   top: 6%;
    text-align: right;
    width: 100%;
 }
 
-h2.title span {
-   font-family: 'Luckiest Guy', Helvetica, Sans-Serif;
+.titleCard > span {
    font-size: 3.5em;
    letter-spacing: -1px;
    background: rgb(0, 0, 0);
    background: rgba(0, 0, 0, 0.7);
    padding: 10px;
+}
+
+.date {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    right: 0;
+    padding: 2%;
+    margin: 0;
+    background: rgba(40,40,40,0.5);
+    text-align: center;
+    z-index: 5;
 }
 
 .heart {
@@ -67,6 +93,125 @@ h2.title span {
     font-size: 1.5em;
 }
 
-.section {
-  margin: 15% auto;
+.flexstyle {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section, .bigsection {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.bigsection {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.icon {
+  background-image: url('../images/sprites.png');
+  background-repeat: no-repeat;
+  background-position: 14px 14px;
+  background-size: 240px 320px;
+
+  display: inline-block;
+  margin-top: 1px;
+  width: 32px; height: 32px;
+  vertical-align: text-top;
+  text-indent: -1000px;
+  overflow: hidden;
+
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.icon-gentoo { background-position: 0 0; width: 32px;  height: 32px; }
+
+.next {
+  position: fixed;
+  border: none;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  background: rgba(255,255,255,0.2);
+  color: #333;
+}
+
+.how {
+    font-family: 'Lato',Arial,sans-serif;
+    font-weight: 100;
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+}
+
+.logo {
+  max-width: 350px;
+  max-height: 50px;
+}
+
+.card {
+  position: relative;
+  margin: 2%;
+  font-size: 1.6em;
+  line-height: 1.6em;
+  border: 1px solid #fff;
+}
+
+.job {
+  background: #fff;
+  color: #000;
+  font-weight: 100;
+  padding: 1%;
+}
+
+.role {
+  background: #ff0;
+  color: #000;
+  font-weight: 400;
+  padding: 1%;
+}
+
+.bio {
+  font-size: 1.5em;
+  font-weight: 200;
+  margin: 1% 2.666666667% 0;
+  letter-spacing: 0.04em;
+}
+
+.tech {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.tech li {
+  display: inline;
+}
+
+.details {
+  padding-left: 16px;
+}
+
+.details li {
+  text-indent: -12px;
+}
+
+
+.details li:before {
+  content: "» ";
+}
+
+.blurb {
+  font-weight: 100;
+  line-height: 1.2em;
+  letter-spacing: 0.01em;
+  padding: 2%;
 }

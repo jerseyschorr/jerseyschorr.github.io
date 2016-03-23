@@ -15,7 +15,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'js/heart.js': 'lib/heart.es6'
+                    'js/heart.js': 'lib/heart.es6',
+                    'js/navigation.js': 'lib/navigation.es6'
                 }
             }
         }

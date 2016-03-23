@@ -25,6 +25,8 @@ function dHeart(s) {
 }
 
 function run() {
-    dHeart(dHeart.toString().replace(/\s+/g, '').replace(/var/g, 'var '));
+    dHeart(dHeart.toString().replace(/\s+/g, '').replace(/(let|const)/g, x => `${ x } `));
 }
+
+run();
 //# sourceMappingURL=heart.js.map
