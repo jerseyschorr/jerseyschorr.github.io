@@ -14,7 +14,7 @@ Work Experience
 
 **Technical Lead** | Web Products - Mobile Web | June 2013 - Present
 
-As the Technical Lead of a small team of talented and dedicated engineers, my responsibilities for the mobile web (mobile.nytimes.com) encompasses many roles. From server configuration (Puppet/Ansible) including managing caching strategies (Redis/Varnish) to writing Backend (NGINX/Node.js) and Front-End Javascript. Additionally, I work closely with our Newsroom, Product, and Infrastructure teams implementing new features at the same time making performance improvements to the overall system.
+As the Technical Lead of a small team of talented and dedicated engineers, my responsibilities for the mobile web (mobile.nytimes.com) encompass many roles. From server configuration (Puppet/Ansible) including managing caching strategies (Redis/Varnish) to writing Backend (NGINX/Node.js) and Front-End Javascript. Additionally, I work closely with our Newsroom, Product, and Infrastructure teams implementing new features at the same time making performance improvements to the overall system.
 
 * Continuous delivery: setup Jenkins pipelines and created a Vagrant/Virtual Machine sandbox
 * Architected a "preview" edition of the mobile web platform for use in article/story creation in the newsroom
