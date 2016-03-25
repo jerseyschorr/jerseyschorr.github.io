@@ -75,7 +75,7 @@ VisionOSS develops a provisioning and service management solution, designed spec
 
 ### Cisco Systems
 
-**Software Engineer (II/III)** | Reading, England | Oct. 2001 – June 2006
+**Software Engineer (II/III)** | Reading, England | Oct. 2001 – June 2006  
 **Software Engineer (I/II)** | Research Triangle Park, North Carolina | June 2000 – Oct .2001
 
 During my career at Cisco Systems, I developed internal testing tools, maintained project management systems, and provided Linux/UNIX support for the worldwide Network Systems Integration and Test Engineering (NSITE) organization.
