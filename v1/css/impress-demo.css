@@ -296,7 +296,7 @@ q {
     z-index: 300;
     position: absolute;
     height:50px;
-    margin-top:-50px; 
+    margin-top:-50px;
 }
 
 .tl {
@@ -314,10 +314,9 @@ q {
     left: -25%;
     bottom: -10px;
     border-bottom: 5px solid #fff;
-    width: 200%;
-/*    overflow: hidden; */
+    width: 150%;
     white-space: nowrap;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0);
 }
 
 .cell {
@@ -372,7 +371,7 @@ q {
 
 .proj2 {
     background: rgba(0,0,0,0.5);
-    
+
     font-size: 0.75em;
     width: 350px;
     height: 250px;
@@ -440,6 +439,55 @@ h2 {
     overflow: hidden;
 }
 
+.lang-es6 {
+    color: #F8DC3D;
+    background: black;
+}
+
+.lang-varnish {
+    background: #2c2c2c;
+    background-image: url('../images/varnish.svg');
+    background-size: 97px;
+    background-repeat: no-repeat;
+    background-position: -20px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.lang-nginx {
+    background: #2c2c2c;
+    background-image: url('../images/nginx.svg');
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.lang-python {
+    background: #fff;
+    background-image: url('../images/python.svg');
+    background-size: 92px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.lang-coffee {
+    background: #e4e4e4;
+    background-image: url('../images/coffeescript.svg');
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .ilist {
     width: 300px;
     float: right;
@@ -447,9 +495,8 @@ h2 {
 
 .grayout {
     -webkit-filter: grayscale(1);
-    filter:grayscale(1);
+    filter: grayscale(1);
     opacity: 0.1;
-    background: #000;
 }
 
 .light {
