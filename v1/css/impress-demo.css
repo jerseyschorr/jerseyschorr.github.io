@@ -213,13 +213,51 @@ a:focus {
     color: #fff;
     position: relative;
     padding: 40px 20px 20px;
-    font-size: 200%;
 }
 
-.titleOffset {
-    top: -450px;
-    float: right;
-    z-index: 2;
+h1, h2 {
+   font-family: 'Rokkitt', serif;
+}
+
+.titleCard {
+    box-sizing: border-box;
+    /*position: relative;*/
+}
+
+.titleCard .title {
+    color: #fff;
+    font-size: 3em;
+    letter-spacing: -2.2px;
+    background: rgb(0, 0, 0);
+    padding: 4%;
+    text-transform: uppercase;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    height: 30px;
+}
+
+.titleCard .subtitle {
+    letter-spacing: -1px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 30px;
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-weight: 400;
+
+    position: absolute;
+    top: 33.5%;
+    right: 0;
+    height: 30px;
+
+}
+
+.bigpic {
+  background-image: url("../images/eric2.jpg");
+  background-color: rgb(242, 241, 236);
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 q {
@@ -237,19 +275,19 @@ q {
 }
 
 .cubeContainer {
-    margin-top: 10%;
     width: 100%;
-    text-align: center;
-    height: 100%;
-    line-height: 1.5em;
+    height: 50%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .cube {
-    margin:auto;
+    margin:0;
 }
 
 #mega {
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Rokkitt', serif;
     font-size: 3em;
     line-height: 3em;
     text-align: center;
@@ -387,7 +425,7 @@ q {
 }
 
 .bbbold {
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Rokkitt', serif;
     font-size: 1em;
     /*-webkit-transform: rotate(30deg);
     position: absolute; */
@@ -420,7 +458,7 @@ blockquote {
 
 h2 {
 /*    line-height: 1.0em; */
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Rokkitt', serif;
     border-bottom: 1px solid #fff;
     margin-top: 3%;
 }
@@ -493,6 +531,48 @@ h2 {
     float: right;
 }
 
+.mwr {
+    width: 600px;
+}
+
+.boxtl {
+    padding: 4%;
+    width: 50%;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+
+.boxtr {
+    padding: 4%;
+    width: 50%;
+    border-bottom: 3px solid #fff;
+}
+.boxbl {
+    padding: 4%;
+    width: 50%;
+    border-right: 3px solid #fff;
+}
+.boxbr {
+    padding: 4%;
+    width: 50%;
+}
+
+.title2 {
+    background: yellow;
+    color: #000;
+    font-size: 1.6em;
+    line-height: 1.0em;
+    padding: 0 8px;
+}
+
+.title3 {
+    text-transform: uppercase;
+    font-family: Lato;
+    font-weight: 800;
+    color: lightgreen;
+    background: none;
+    max-width: 30%;
+}
 .grayout {
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
@@ -513,6 +593,11 @@ h2 {
     width: 80px;
     margin: 5px;
     float: left;
+}
+
+.mwr .icons li {
+    height: 50px;
+    width: 100%;
 }
 
 .nofloat {

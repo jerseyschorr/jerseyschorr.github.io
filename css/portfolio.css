@@ -1,11 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100|Luckiest+Guy);
-
 
 body {
     margin: 0;
     min-width: 320px;
     font-size: 10px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     line-height: 1;
     background:
@@ -16,6 +14,8 @@ body {
     background-color: #282828;
     background-size: 16px 16px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 ol, ul {
@@ -37,20 +37,44 @@ table {
     border-spacing: 0;
 }
 
+.b {
+  position: fixed;
+  padding: 2em;
+  border: 5px solid red;
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  background: #000;
+  z-index: 10;
+}
+
+.menuitm {
+  background: #fefefe;
+  color: #adadad;
+  padding: 2em;
+}
+
 .imageholder {
 	position: relative;
 }
 
 .image {
-  display: block;
   max-width: 100%;
-  max-height: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 
+.bigpic {
+  background-image: url("../images/eric2.jpg");
+  background-color: rgb(242, 241, 236);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
 h1, h2 {
-   font-family: 'Luckiest Guy', Sans-Serif;
+   font-family: 'Rokkitt', serif;
 }
 
 .title {
@@ -60,18 +84,26 @@ h1, h2 {
 }
 
 .titleCard {
-   position: absolute;
-   top: 6%;
-   text-align: right;
-   width: 100%;
+    box-sizing: border-box;
 }
 
-.titleCard > span {
-   font-size: 3.5em;
-   letter-spacing: -1px;
-   background: rgb(0, 0, 0);
-   background: rgba(0, 0, 0, 0.7);
-   padding: 10px;
+.titleCard .title {
+    letter-spacing: -1px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 30px;
+    margin: 0;
+}
+
+.titleCard .subtitle {
+    letter-spacing: -1px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 30px;
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-weight: 400;
+
 }
 
 .date {
@@ -117,6 +149,7 @@ h1, h2 {
 .bigsection {
   height: 100vh;
   max-height: 100vh;
+  min-width: 100%;
 }
 
 .info {
@@ -237,4 +270,53 @@ h1, h2 {
   line-height: 1.2em;
   letter-spacing: 0.01em;
   padding: 2%;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .bigpic {
+    background-position: 15%;
+  }
+  .titleCard {
+    padding: 10%;
+  }
+  .titleCard .title {
+    font-size: 4.6em;
+  }
+  .titleCard .subtitle {
+    font-size: 1.9em;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .titleCard {
+    padding: 15%;
+  }
+  .titleCard .title {
+    font-size: 7.6em;
+  }
+  .titleCard .subtitle {
+    font-size: 3.4em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .titleCard {
+    padding: 15%;
+  }
+  .titleCard .title {
+    font-size: 7.6em;
+  }
+  .titleCard .subtitle {
+    font-size: 3.4em;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1999px) {
+  .titleCard {
+    padding: 15%;
+  }
+  .titleCard .title {
+    font-size: 7.6em;
+  }
+  .titleCard .subtitle {
+    font-size: 3.4em;
+  }
 }
