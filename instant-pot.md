@@ -40,3 +40,6 @@
 - ⭐️ [Broccoli](https://www.pressurecookrecipes.com/instant-pot-broccoli/)
 - ⭐️ [Brown Basmati Rice](https://pipingpotcurry.com/brown-basmati-rice-pressure-cooker/)
 - ⭐️ [Rice](https://www.spendwithpennies.com/instant-pot-rice/)
+
+# Chicken
+- [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
