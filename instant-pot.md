@@ -3,6 +3,7 @@
 - ⭐️ [Butternet Squash Soup with Ginger](https://twosleevers.com/butternut-ginger-soup/)   (*Leave out cinnamon*)
 - ⭐️ [Minestrone Soup](https://lifemadesweeter.com/instant-pot-minestrone-soup/)   (*Cook pasta seperately*)
 - ⭐️ [Curried Cauliflower Soup](https://tastythin.com/instant-pot-curried-cauliflower-soup-paleo-whole30/)
+- [Lentil Soup](https://www.wellplated.com/instant-pot-lentil-soup/#wprm-recipe-container-33058) 
 - [Mushroom Barley Soup](https://recipeteacher.com/instant-pot-mushroom-barley-soup/)
 - [Tomato Soup](https://www.pressurecookrecipes.com/instant-pot-tomato-soup/)
 - [Broccoli Lentil Soup](https://www.ruchiskitchen.com/instant-pot-broccoli-lentil-soup/)
