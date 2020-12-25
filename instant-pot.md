@@ -43,4 +43,7 @@
 - ⭐️ [Rice](https://www.spendwithpennies.com/instant-pot-rice/)
 
 # Chicken
-- [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
+- ⭐️ [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
+
+# Beef
+- [Shepherd's Pie](https://www.allrecipes.com/recipe/270606/instant-pot-shepherds-pie/)
