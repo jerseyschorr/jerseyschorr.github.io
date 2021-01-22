@@ -46,6 +46,7 @@
 # Chicken
 - ⭐️ [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
 - ⭐️ [Chicken Shawarma](https://www.jocooks.com/recipes/instant-pot-chicken-shawarma/)
+- [Chinese Chicken and Broccoli](https://foodiesterminal.com/instant-pot-chinese-chicken-and-broccoli/)
 
 # Beef
 - ⭐️ [Shepherd's Pie](https://www.allrecipes.com/recipe/270606/instant-pot-shepherds-pie/)
