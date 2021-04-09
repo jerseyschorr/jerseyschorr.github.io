@@ -48,6 +48,7 @@
 # Chicken
 - ⭐️ [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
 - ⭐️ [Chicken Shawarma](https://www.jocooks.com/recipes/instant-pot-chicken-shawarma/)
+- [Sticky Bone Chicken](https://ohsodelicioso.com/pressure-cooker-bone-chicken/)
 - [Chinese Chicken and Broccoli](https://foodiesterminal.com/instant-pot-chinese-chicken-and-broccoli/)
 
 # Beef
