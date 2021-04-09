@@ -53,6 +53,4 @@
 
 # Beef
 - ⭐️ [Shepherd's Pie](https://www.allrecipes.com/recipe/270606/instant-pot-shepherds-pie/)
-
-# Meat
-- [Curried Sausages & Peas](https://instantpoteats.com/instant-pot-curried-sausages-peas/) (*without pork of course*)
+- ⭐️ [Curried Sausages & Peas](https://instantpoteats.com/instant-pot-curried-sausages-peas/) (*without pork of course*)
