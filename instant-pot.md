@@ -37,6 +37,8 @@
 - [Chinese Takeout-Style Tofu and Broccoli](https://recipes.instantpot.com/recipe/chinese-takeout-style-tofu-and-broccoli/)
 - [Vegan Instant Pot BBQ Meatballs](https://www.frieddandelions.com/vegan-instant-pot-bbq-meatballs/)
 - [Spicy Garlic Eggplant](https://www.melaniecooks.com/instant-pot-spicy-garlic-eggplant/)
+- [Vegetarian Chili with Quinoa](https://pipingpotcurry.com/instant-pot-vegetarian-quinoa-chili/)
+- [Mexican Black Beans](https://pipingpotcurry.com/mexican-black-beans-instant-pot/)
 
 # Basics
 - ⭐️ [Lentils](https://detoxinista.com/instant-pot-lentils/)
