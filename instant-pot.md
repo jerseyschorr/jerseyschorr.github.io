@@ -50,8 +50,10 @@
 # Chicken
 - ⭐️ [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
 - ⭐️ [Chicken Shawarma](https://www.jocooks.com/recipes/instant-pot-chicken-shawarma/)
+- [Instant Pot Chicken Breasts with Beer Gravy](https://www.platingsandpairings.com/instant-pot-chicken-breasts-gravy/)
 - [Sticky Bone Chicken](https://ohsodelicioso.com/pressure-cooker-bone-chicken/)
 - [Chinese Chicken and Broccoli](https://foodiesterminal.com/instant-pot-chinese-chicken-and-broccoli/)
+- [Instant Pot Chicken (The Moder Proper)](https://themodernproper.com/instant-pot-chicken)
 
 # Beef
 - ⭐️ [Shepherd's Pie](https://www.allrecipes.com/recipe/270606/instant-pot-shepherds-pie/)
