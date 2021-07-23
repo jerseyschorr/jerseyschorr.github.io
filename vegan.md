@@ -3,6 +3,7 @@
 ## Tofu
 - [One Pan Tofu Coconut Curry](https://www.yayforfood.com/recipes/tofu-coconut-curry/)
 - [Vegetarian Tofu Chili](https://www.thespruceeats.com/vegetarian-tofu-chili-recipe-3378151)
+- [Sheet Pan BBQ Tofu](https://www.thekitchn.com/sheet-pan-bbq-tofu-recipe-256176)
 
 ## Beans
 - [Black Beans & Rice](https://cafedelites.com/black-beans-rice-recipe/)
