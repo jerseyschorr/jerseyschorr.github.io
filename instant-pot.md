@@ -50,6 +50,7 @@
 # Chicken
 - ⭐️ [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
 - ⭐️ [Chicken Shawarma](https://www.jocooks.com/recipes/instant-pot-chicken-shawarma/)
+- ⭐️ [Chicken Soup](https://www.simplyrecipes.com/recipes/how_to_make_chicken_soup_in_the_pressure_cooker/)
 - [Instant Pot Chicken Breasts with Beer Gravy](https://www.platingsandpairings.com/instant-pot-chicken-breasts-gravy/)
 - [Sticky Bone Chicken](https://ohsodelicioso.com/pressure-cooker-bone-chicken/)
 - [Chinese Chicken and Broccoli](https://foodiesterminal.com/instant-pot-chinese-chicken-and-broccoli/)
