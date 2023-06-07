@@ -52,25 +52,27 @@ _______________
 ## Bean Quesadilla
 
 Recipe:
-• -1 onion
-• -2 cloves garlic
-• -1 carrot
-• Sauté in oil for 3-4mins
-• -2 Tbsp tomato paste
-• -1 Tsp each cumin and paprika
-• -salt to taste
-• -optionally 1/2 Tsp chili powder
-• -1 can (220g) black beans
-• Stir fry 2-3mins.
-• Mash until it’s a chunky paste.
-• Sauce:
-• -3 Tbsp vegan yogurt
-• -3 Tsp vegan Mayo
-• -3 Tbsp chopped roasted peppers (I used jarred ones)
-• -1/2 lime, juiced
-• -1/2 Tsp chili powder
-• -salt to taste
-• Blend until smooth.
-• -3 small tortillas
+- 1 onion
+- 2 cloves garlic
+- 1 carrot
+Sauté in oil for 3-4mins
+- 2 Tbsp tomato paste
+- 1 Tsp each cumin and paprika
+- salt to taste
+- optionally 1/2 Tsp chili powder
+- 1 can (220g) black beans
+
+Stir fry 2-3mins.
+Mash until it’s a chunky paste.
+Sauce:
+- 3 Tbsp vegan yogurt
+- 3 Tsp vegan Mayo
+- 3 Tbsp chopped roasted peppers (I used jarred ones)
+- 1/2 lime, juiced
+- 1/2 Tsp chili powder
+- salt to taste
+
+Blend until smooth.
+-3 small tortillas
 • Spread some bean filling and the sauce on one half of a tortilla.
 • Clap and fry each side until golden brown.
