@@ -23,6 +23,7 @@
 - [Vegan Butter Chicken with Tofu](https://holycowvegan.net/instant-pot-vegan-butter-chicken-with-tofu/)
 
 # Vegetarian
+- ⭐️ [Instant Pot Vegan Burrito Bowls](https://www.delishknowledge.com/instant-pot-vegan-burrito-bowls/)
 - ⭐️ [Chickpea Biryani](https://ministryofcurry.com/chickpea-biryani-instant-pot/)
 - ⭐️ [Farro Risotto with Mushrooms and Spinach](https://recipes.instantpot.com/recipe/farro-risotto-with-mushrooms-and-spinach/)
 - ⭐️ [Mushroom Risotto](https://damndelicious.net/2018/03/21/instant-pot-mushroom-risotto/)
@@ -51,11 +52,12 @@
 - ⭐️ [Chicken and Rice](https://www.saltandlavender.com/instant-pot-chicken-and-rice/)
 - ⭐️ [Chicken Shawarma](https://www.jocooks.com/recipes/instant-pot-chicken-shawarma/)
 - ⭐️ [Chicken Soup](https://www.simplyrecipes.com/recipes/how_to_make_chicken_soup_in_the_pressure_cooker/)
-- [Instant Pot Chicken Breasts with Beer Gravy](https://www.platingsandpairings.com/instant-pot-chicken-breasts-gravy/)
+- ⭐️ [Instant Pot Chicken Breasts with Beer Gravy](https://www.platingsandpairings.com/instant-pot-chicken-breasts-gravy/)
 - [Sticky Bone Chicken](https://ohsodelicioso.com/pressure-cooker-bone-chicken/)
 - [Chinese Chicken and Broccoli](https://foodiesterminal.com/instant-pot-chinese-chicken-and-broccoli/)
 - [Instant Pot Chicken (The Moder Proper)](https://themodernproper.com/instant-pot-chicken)
 
 # Beef
 - ⭐️ [Shepherd's Pie](https://www.allrecipes.com/recipe/270606/instant-pot-shepherds-pie/)
-- ⭐️ [Curried Sausages & Peas](https://instantpoteats.com/instant-pot-curried-sausages-peas/) (*without pork of course*)
+- ⭐️ [Curried Sausages & Peas](https://instantpoteats.com/instant-pot-curried-sausages-peas/) (*without pork, of course*)
+- ⭐️ [Instant Pot Ground Beef and Rice](https://temeculablogs.com/instant-pot-ground-beef-and-rice/)
