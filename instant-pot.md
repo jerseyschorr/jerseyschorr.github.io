@@ -23,6 +23,7 @@
 - [Vegan Butter Chicken with Tofu](https://holycowvegan.net/instant-pot-vegan-butter-chicken-with-tofu/)
 
 # Vegetarian
+- ⭐️ [Jamaican Instant Pot Rice and Beans](https://www.myforkinglife.com/jamaican-instant-pot-rice-and-beans/)
 - ⭐️ [Instant Pot Vegan Burrito Bowls](https://www.delishknowledge.com/instant-pot-vegan-burrito-bowls/)
 - ⭐️ [Chickpea Biryani](https://ministryofcurry.com/chickpea-biryani-instant-pot/)
 - ⭐️ [Farro Risotto with Mushrooms and Spinach](https://recipes.instantpot.com/recipe/farro-risotto-with-mushrooms-and-spinach/)
