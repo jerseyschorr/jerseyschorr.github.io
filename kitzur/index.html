@@ -12,6 +12,9 @@
 
 <body>
 
+  <!-- Shabbos Banner -->
+  <div id="shabbosBanner">🕯️ Shabbos Mode Active — No Interaction</div>
+
   <!-- Loading Screen -->
   <div id="loadingScreen">
     <div class="loader"></div>
@@ -41,6 +44,7 @@
         <div class="header-actions">
           <button id="jumpTodayBtn"><span class="he">היום</span> Today</button>
           <button id="darkModeBtn"><span class="he">מצב לילה</span> Dark</button>
+          <button id="shabbosBtn"><span class="he">שבת</span> Shabbos</button>
           <button id="exportBtn"><span class="he">ייצוא</span> Export</button>
           <button id="importBtnVisible"><span class="he">ייבוא</span> Import</button>
           <button id="resetBtn" class="danger"><span class="he">איפוס</span> Reset</button>
@@ -130,6 +134,8 @@
       updateStreakDisplay();
       updateStatsCard();
       hideLoading();
+      initDarkMode();
+      initShabbosModeFromStorageOrUrl();
     }
 
     function hideLoading() {
@@ -249,6 +255,10 @@
     }
 
     function recomputeStreak() {
+      if (!todayDayNumber) {
+        meta.streak = 0;
+        return;
+      }
       let streak = 0;
       for (let d = todayDayNumber; d >= 1; d--) {
         if (progress[d]) streak++;
@@ -278,6 +288,7 @@
     }
 
     function toggleDayCompletion(dayNum, isCompleted) {
+      if (document.body.classList.contains('shabbos')) return;
       if (isCompleted) progress[dayNum] = true;
       else delete progress[dayNum];
 
@@ -290,16 +301,20 @@
 
     // Dark Mode
     const darkModeBtn = document.getElementById('darkModeBtn');
+    function initDarkMode() {
+      if (localStorage.getItem('kitzur_dark_mode') === 'true') {
+        document.body.classList.add('dark');
+      }
+    }
     darkModeBtn.addEventListener('click', () => {
+      if (document.body.classList.contains('shabbos')) return;
       document.body.classList.toggle('dark');
       localStorage.setItem('kitzur_dark_mode', document.body.classList.contains('dark'));
     });
-    if (localStorage.getItem('kitzur_dark_mode') === 'true') {
-      document.body.classList.add('dark');
-    }
 
     // Backup/Export
     document.getElementById('exportBtn').addEventListener('click', () => {
+      if (document.body.classList.contains('shabbos')) return;
       const data = { progress, meta };
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
@@ -318,6 +333,7 @@
     document.body.appendChild(importFileInput);
 
     document.getElementById('importBtnVisible').addEventListener('click', () => {
+      if (document.body.classList.contains('shabbos')) return;
       importFileInput.click();
     });
 
@@ -338,6 +354,8 @@
           alert('Progress imported successfully.');
         } catch {
           alert('Invalid backup file.');
+        } finally {
+          importFileInput.value = '';
         }
       };
       reader.readAsText(file);
@@ -345,6 +363,7 @@
 
     // Reset
     document.getElementById('resetBtn').addEventListener('click', () => {
+      if (document.body.classList.contains('shabbos')) return;
       if (!confirm('Reset all progress?')) return;
       progress = {};
       meta = { streak: 0, lastCompletedDay: null };
@@ -358,6 +377,36 @@
     document.getElementById('jumpTodayBtn').addEventListener('click', () => {
       if (todayDayNumber) scrollToDay(todayDayNumber);
     });
+
+    // Shabbos Mode
+    const shabbosBtn = document.getElementById('shabbosBtn');
+
+    function enableShabbosMode() {
+      document.body.classList.add('shabbos');
+      localStorage.setItem('kitzur_shabbos_mode', 'true');
+    }
+
+    function disableShabbosMode() {
+      document.body.classList.remove('shabbos');
+      localStorage.setItem('kitzur_shabbos_mode', 'false');
+    }
+
+    shabbosBtn.addEventListener('click', () => {
+      if (document.body.classList.contains('shabbos')) {
+        disableShabbosMode();
+      } else {
+        enableShabbosMode();
+      }
+    });
+
+    function initShabbosModeFromStorageOrUrl() {
+      if (localStorage.getItem('kitzur_shabbos_mode') === 'true') {
+        enableShabbosMode();
+      }
+      if (new URLSearchParams(location.search).get('shabbos') === '1') {
+        enableShabbosMode();
+      }
+    }
 
     // PWA
     if ('serviceWorker' in navigator) {
