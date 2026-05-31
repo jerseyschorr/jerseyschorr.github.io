@@ -1,353 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Kitzur Shulchan Aruch Yomi Checklist</title>
+  <title>Kitzur Shulchan Aruch Yomi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #f5f0e6;
-      --card-bg: #ffffff;
-      --text-main: #22252b;
-      --text-muted: #666a73;
-      --accent: #b08a3c;
-      --accent-soft: #e2cfa0;
-      --border: #d4c7b3;
-      --checked: #2f855a;
-      --danger: #b83232;
-      --shadow-soft: 0 2px 6px rgba(0,0,0,0.08);
-    }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-    }
-
-    .app {
-      max-width: 480px;
-      margin: 0 auto;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 12px 12px 24px;
-    }
-
-    header {
-      padding: 12px 14px 10px;
-      background: linear-gradient(to bottom, #fdf8ec, #f5f0e6);
-      border-radius: 12px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    header h1 span.he {
-      display: block;
-      font-family: "Times New Roman", "David", serif;
-      font-size: 1.05rem;
-    }
-
-    header h1 span.en {
-      display: block;
-      font-size: 0.85rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .header-divider {
-      margin: 8px auto 10px;
-      width: 80%;
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--accent), transparent);
-      border-radius: 999px;
-    }
-
-    .streak-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-    }
-
-    .streak-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .streak-label {
-      font-weight: 600;
-    }
-
-    .streak-label span.he {
-      font-family: "Times New Roman", "David", serif;
-      margin-right: 4px;
-    }
-
-    .streak-value {
-      font-size: 1.1rem;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .streak-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 6px;
-    }
-
-    button {
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      padding: 6px 10px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--text-main);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    }
-
-    button span.he {
-      font-family: "Times New Roman", "David", serif;
-    }
-
-    button.danger {
-      border-color: var(--danger);
-      color: var(--danger);
-    }
-
-    main {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-      min-height: 0;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 10px 12px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border);
-    }
-
-    .card-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .card-title span.he {
-      font-family: "Times New Roman", "David", serif;
-    }
-
-    .card-title span.en {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .today-siman {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .today-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .today-meta strong {
-      font-weight: 600;
-    }
-
-    .today-meta span.he {
-      font-family: "Times New Roman", "David", serif;
-      margin-right: 4px;
-    }
-
-    .stats-row {
-      display: flex;
-      justify-content: space-between;
-      text-align: center;
-      margin-top: 6px;
-    }
-
-    .stats-item {
-      flex: 1;
-    }
-
-    .stats-value {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .stats-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .list-container {
-      flex: 1;
-      min-height: 0;
-      overflow-y: auto;
-      border-radius: 12px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border);
-      background: #f9f4ea;
-    }
-
-    .list-header {
-      padding: 8px 10px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      background: #f3ebdd;
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-
-    .list-header span.he {
-      font-family: "Times New Roman", "David", serif;
-      margin-right: 4px;
-    }
-
-    .list-header select {
-      font-size: 0.8rem;
-      padding: 4px 6px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-    }
-
-    .day-item {
-      display: flex;
-      align-items: center;
-      padding: 8px 10px;
-      border-bottom: 1px solid #e3d7c4;
-      background: rgba(255,255,255,0.7);
-    }
-
-    .day-item:last-child {
-      border-bottom: none;
-    }
-
-    .day-item.today {
-      background: #fffaf0;
-      box-shadow: inset 2px 0 0 var(--accent);
-    }
-
-    .day-checkbox {
-      margin-right: 10px;
-      flex-shrink: 0;
-    }
-
-    .day-checkbox input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--checked);
-    }
-
-    .day-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .day-line {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 6px;
-      font-size: 0.9rem;
-    }
-
-    .day-label {
-      font-weight: 500;
-    }
-
-    .day-label span.he {
-      font-family: "Times New Roman", "David", serif;
-      margin-right: 4px;
-    }
-
-    .day-siman {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-align: right;
-    }
-
-    .day-meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .day-meta span.he {
-      font-family: "Times New Roman", "David", serif;
-      margin-right: 4px;
-    }
-
-    .day-item.completed .day-label,
-    .day-item.completed .day-siman {
-      text-decoration: line-through;
-      color: #7a7f88;
-    }
-
-    .day-item.completed .day-meta {
-      color: #9a9fa8;
-    }
-
-    .footer-note {
-      margin-top: 8px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#b08a3c">
 </head>
+
 <body>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen">
+    <div class="loader"></div>
+    <div class="loading-text">
+      <span class="he">טוען...</span> Loading
+    </div>
+  </div>
+
   <div class="app">
     <header>
       <h1>
         <span class="he">קיצור שולחן ערוך יומי</span>
         <span class="en">Kitzur Shulchan Aruch Yomi</span>
       </h1>
+
       <div class="header-divider"></div>
+
       <div class="streak-row">
         <div class="streak-main">
           <div class="streak-label">
@@ -356,29 +37,30 @@
           <div class="streak-value" id="streakValue">0</div>
           <div class="streak-sub" id="streakSub">No days completed yet</div>
         </div>
+
         <div class="header-actions">
-          <button id="jumpTodayBtn">
-            <span class="he">היום</span> Today
-          </button>
-          <button id="resetBtn" class="danger">
-            <span class="he">איפוס</span> Reset
-          </button>
+          <button id="jumpTodayBtn"><span class="he">היום</span> Today</button>
+          <button id="darkModeBtn"><span class="he">מצב לילה</span> Dark</button>
+          <button id="exportBtn"><span class="he">ייצוא</span> Export</button>
+          <button id="importBtnVisible"><span class="he">ייבוא</span> Import</button>
+          <button id="resetBtn" class="danger"><span class="he">איפוס</span> Reset</button>
         </div>
       </div>
     </header>
 
     <main>
+
+      <!-- Today Card -->
       <section class="card" id="todayCard">
         <div class="card-title">
-          <div>
-            <span class="he">היום בלימוד</span> / <span class="en">Today’s Learning</span>
-          </div>
+          <div><span class="he">היום בלימוד</span> / <span class="en">Today’s Learning</span></div>
           <div id="todayDayLabel" class="en"></div>
         </div>
         <div class="today-siman" id="todaySiman">Loading…</div>
         <div class="today-meta" id="todayMeta"></div>
       </section>
 
+      <!-- Stats Card -->
       <section class="card" id="statsCard">
         <div class="card-title">
           <span class="he">סטטיסטיקה</span> / <span class="en">Stats</span>
@@ -386,31 +68,304 @@
         <div class="stats-row">
           <div class="stats-item">
             <div class="stats-value" id="statsCompleted">0</div>
-            <div class="stats-label">
-              <span class="he">הושלמו</span> / Completed
-            </div>
+            <div class="stats-label"><span class="he">הושלמו</span> / Completed</div>
           </div>
           <div class="stats-item">
             <div class="stats-value" id="statsPercent">0%</div>
-            <div class="stats-label">
-              <span class="he">אחוז</span> / Percent
-            </div>
+            <div class="stats-label"><span class="he">אחוז</span> / Percent</div>
           </div>
           <div class="stats-item">
             <div class="stats-value" id="statsRemaining">0</div>
-            <div class="stats-label">
-              <span class="he">נותרו</span> / Remaining
-            </div>
+            <div class="stats-label"><span class="he">נותרו</span> / Remaining</div>
           </div>
         </div>
       </section>
 
+      <!-- Days List -->
       <section class="list-container">
         <div class="list-header">
+          <div><span class="he">רשימת ימים</span> / Days</div>
           <div>
-            <span class="he">רשימת ימים</span> / Days
+            <label for="jumpSelect"><span class="he">קפיצה</span> / Jump</label>
+            <select id="jumpSelect"><option value="">Day…</option></select>
           </div>
-          <div>
-            <label for="jumpSelect" style="margin-right:4px;">
-              <span class="he">קפיצה</span> / Jump
-            </label>
+        </div>
+        <div id="daysList"></div>
+      </section>
+
+      <div class="footer-note">
+        Progress is stored only in this browser (localStorage).<br>
+        הנתונים נשמרים רק בדפדפן שלך.
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    const JSON_URL = 'kitzur-cycle.json';
+    const STORAGE_KEY_PROGRESS = 'kitzur_yomi_progress_v1';
+    const STORAGE_KEY_META = 'kitzur_yomi_meta_v1';
+
+    let cycleData = null;
+    let progress = {};
+    let meta = { lastCompletedDay: null, streak: 0 };
+    let todayDayNumber = null;
+
+    const daysListEl = document.getElementById('daysList');
+    const jumpSelectEl = document.getElementById('jumpSelect');
+    const streakValueEl = document.getElementById('streakValue');
+    const streakSubEl = document.getElementById('streakSub');
+    const todaySimanEl = document.getElementById('todaySiman');
+    const todayMetaEl = document.getElementById('todayMeta');
+    const todayDayLabelEl = document.getElementById('todayDayLabel');
+
+    async function init() {
+      loadFromStorage();
+      await loadCycleJson();
+      computeTodayDayNumber();
+      renderDays();
+      populateJumpSelect();
+      updateTodayCard();
+      recomputeStreak();
+      updateStreakDisplay();
+      updateStatsCard();
+      hideLoading();
+    }
+
+    function hideLoading() {
+      document.getElementById('loadingScreen').style.display = 'none';
+    }
+
+    function loadFromStorage() {
+      try { progress = JSON.parse(localStorage.getItem(STORAGE_KEY_PROGRESS)) || {}; } catch {}
+      try { meta = Object.assign(meta, JSON.parse(localStorage.getItem(STORAGE_KEY_META)) || {}); } catch {}
+    }
+
+    function saveToStorage() {
+      localStorage.setItem(STORAGE_KEY_PROGRESS, JSON.stringify(progress));
+      localStorage.setItem(STORAGE_KEY_META, JSON.stringify(meta));
+    }
+
+    async function loadCycleJson() {
+      const res = await fetch(JSON_URL);
+      cycleData = await res.json();
+    }
+
+    function computeTodayDayNumber() {
+      const start = new Date(cycleData.startDate + 'T00:00:00');
+      const now = new Date();
+      const diffDays = Math.floor((now - start) / 86400000);
+      const dayNumber = diffDays + 1;
+      todayDayNumber = (dayNumber >= 1 && dayNumber <= cycleData.days.length) ? dayNumber : null;
+    }
+
+    function renderDays() {
+      daysListEl.innerHTML = '';
+      cycleData.days.forEach((dayObj) => {
+        const dayNum = dayObj.day;
+        const isCompleted = !!progress[dayNum];
+        const isToday = todayDayNumber === dayNum;
+
+        const item = document.createElement('div');
+        item.className = 'day-item' + (isCompleted ? ' completed' : '') + (isToday ? ' today' : '');
+        item.dataset.day = dayNum;
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = isCompleted;
+        checkbox.addEventListener('change', () => toggleDayCompletion(dayNum, checkbox.checked));
+
+        const checkboxWrap = document.createElement('div');
+        checkboxWrap.className = 'day-checkbox';
+        checkboxWrap.appendChild(checkbox);
+
+        const content = document.createElement('div');
+        content.className = 'day-content';
+
+        const line = document.createElement('div');
+        line.className = 'day-line';
+
+        const label = document.createElement('div');
+        label.className = 'day-label';
+        label.innerHTML = '<span class="he">יום</span> Day ' + dayNum;
+
+        const siman = document.createElement('div');
+        siman.className = 'day-siman';
+        siman.textContent = dayObj.simanim;
+
+        line.appendChild(label);
+        line.appendChild(siman);
+
+        const metaLine = document.createElement('div');
+        metaLine.className = 'day-meta';
+        if (isToday) metaLine.innerHTML = '<span class="he">היום</span> Today';
+        else if (todayDayNumber && dayNum < todayDayNumber) metaLine.innerHTML = '<span class="he">עבר</span> / Past';
+        else if (todayDayNumber && dayNum > todayDayNumber) metaLine.innerHTML = '<span class="he">עתיד</span> / Upcoming';
+
+        content.appendChild(line);
+        content.appendChild(metaLine);
+
+        item.appendChild(checkboxWrap);
+        item.appendChild(content);
+        daysListEl.appendChild(item);
+      });
+    }
+
+    function populateJumpSelect() {
+      jumpSelectEl.innerHTML = '<option value="">Day…</option>';
+      cycleData.days.forEach((d) => {
+        const opt = document.createElement('option');
+        opt.value = d.day;
+        opt.textContent = 'Day ' + d.day;
+        jumpSelectEl.appendChild(opt);
+      });
+
+      jumpSelectEl.addEventListener('change', () => {
+        const val = parseInt(jumpSelectEl.value, 10);
+        if (!val) return;
+        scrollToDay(val);
+      });
+    }
+
+    function scrollToDay(dayNum) {
+      const el = daysListEl.querySelector('.day-item[data-day="' + dayNum + '"]');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function updateTodayCard() {
+      if (!todayDayNumber) {
+        todaySimanEl.textContent = 'Outside cycle range';
+        todayMetaEl.textContent = '';
+        todayDayLabelEl.textContent = '';
+        return;
+      }
+      const dayObj = cycleData.days.find(d => d.day === todayDayNumber);
+      todaySimanEl.textContent = dayObj.simanim;
+      todayDayLabelEl.textContent = 'Day ' + todayDayNumber;
+
+      const today = new Date();
+      const dateStr = today.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+      todayMetaEl.innerHTML = '<span class="he">תאריך</span> / Date: <strong>' + dateStr + '</strong>';
+    }
+
+    function recomputeStreak() {
+      let streak = 0;
+      for (let d = todayDayNumber; d >= 1; d--) {
+        if (progress[d]) streak++;
+        else break;
+      }
+      meta.streak = streak;
+    }
+
+    function updateStreakDisplay() {
+      streakValueEl.textContent = meta.streak || 0;
+      streakSubEl.textContent = meta.streak === 0
+        ? 'No days completed yet'
+        : meta.streak === 1
+        ? '1 day in a row'
+        : meta.streak + ' days in a row';
+    }
+
+    function updateStatsCard() {
+      const total = cycleData.days.length;
+      const completed = Object.keys(progress).length;
+      const remaining = total - completed;
+      const percent = Math.round((completed / total) * 100);
+
+      document.getElementById('statsCompleted').textContent = completed;
+      document.getElementById('statsPercent').textContent = percent + '%';
+      document.getElementById('statsRemaining').textContent = remaining;
+    }
+
+    function toggleDayCompletion(dayNum, isCompleted) {
+      if (isCompleted) progress[dayNum] = true;
+      else delete progress[dayNum];
+
+      recomputeStreak();
+      saveToStorage();
+      renderDays();
+      updateStreakDisplay();
+      updateStatsCard();
+    }
+
+    // Dark Mode
+    const darkModeBtn = document.getElementById('darkModeBtn');
+    darkModeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('kitzur_dark_mode', document.body.classList.contains('dark'));
+    });
+    if (localStorage.getItem('kitzur_dark_mode') === 'true') {
+      document.body.classList.add('dark');
+    }
+
+    // Backup/Export
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      const data = { progress, meta };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'kitzur-yomi-backup.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Import
+    const importFileInput = document.createElement('input');
+    importFileInput.type = 'file';
+    importFileInput.accept = 'application/json';
+    importFileInput.style.display = 'none';
+    document.body.appendChild(importFileInput);
+
+    document.getElementById('importBtnVisible').addEventListener('click', () => {
+      importFileInput.click();
+    });
+
+    importFileInput.addEventListener('change', () => {
+      const file = importFileInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const data = JSON.parse(e.target.result);
+          progress = data.progress || {};
+          meta = data.meta || { streak: 0, lastCompletedDay: null };
+          saveToStorage();
+          renderDays();
+          updateStreakDisplay();
+          updateStatsCard();
+          alert('Progress imported successfully.');
+        } catch {
+          alert('Invalid backup file.');
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // Reset
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      if (!confirm('Reset all progress?')) return;
+      progress = {};
+      meta = { streak: 0, lastCompletedDay: null };
+      saveToStorage();
+      renderDays();
+      updateStreakDisplay();
+      updateStatsCard();
+    });
+
+    // Jump to Today
+    document.getElementById('jumpTodayBtn').addEventListener('click', () => {
+      if (todayDayNumber) scrollToDay(todayDayNumber);
+    });
+
+    // PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+
+</body>
+</html>
