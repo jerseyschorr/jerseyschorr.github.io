@@ -18,9 +18,7 @@
       --shadow-soft: 0 2px 6px rgba(0,0,0,0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -198,6 +196,28 @@
       margin-right: 4px;
     }
 
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .stats-item {
+      flex: 1;
+    }
+
+    .stats-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stats-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
     .list-container {
       flex: 1;
       min-height: 0;
@@ -317,37 +337,6 @@
       color: var(--text-muted);
       text-align: center;
     }
-
-    .stats-row {
-      display: flex;
-      justify-content: space-between;
-      text-align: center;
-      margin-top: 6px;
-    }
-
-    .stats-item {
-      flex: 1;
-    }
-
-    .stats-value {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .stats-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    @media (min-width: 600px) {
-      .app {
-        padding-top: 16px;
-      }
-      header {
-        margin-top: 8px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -404,3 +393,23 @@
             <div class="stats-value" id="statsPercent">0%</div>
             <div class="stats-label">
               <span class="he">אחוז</span> / Percent
+            </div>
+          </div>
+          <div class="stats-item">
+            <div class="stats-value" id="statsRemaining">0</div>
+            <div class="stats-label">
+              <span class="he">נותרו</span> / Remaining
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="list-container">
+        <div class="list-header">
+          <div>
+            <span class="he">רשימת ימים</span> / Days
+          </div>
+          <div>
+            <label for="jumpSelect" style="margin-right:4px;">
+              <span class="he">קפיצה</span> / Jump
+            </label>
