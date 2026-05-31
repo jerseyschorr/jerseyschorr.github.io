@@ -13,5 +13,7 @@
     { "day": 8,  "simanim": "Siman 22–24" },
     { "day": 9,  "simanim": "Siman 25–27" },
     { "day": 10, "simanim": "Siman 28–30" }
+
+    /* Continue through day 365 */
   ]
 }
