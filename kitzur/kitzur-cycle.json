@@ -53,10 +53,5 @@
     { "day": 48, "simanim": "Siman 142–144" },
     { "day": 49, "simanim": "Siman 145–147" },
     { "day": 50, "simanim": "Siman 148–150" },
-
-    /* Continue the same pattern up to day 365:
-       day n → "Siman (3n−2)–(3n)" */
-
-    { "day": 365, "simanim": "Siman 1093–1095" }
   ]
 }
