@@ -318,6 +318,28 @@
       text-align: center;
     }
 
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    .stats-item {
+      flex: 1;
+    }
+
+    .stats-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stats-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
     @media (min-width: 600px) {
       .app {
         padding-top: 16px;
@@ -367,279 +389,18 @@
         <div class="today-meta" id="todayMeta"></div>
       </section>
 
-      <section class="list-container">
-        <div class="list-header">
-          <div>
-            <span class="he">רשימת ימים</span> / Days
-          </div>
-          <div>
-            <label for="jumpSelect" style="margin-right:4px;">
-              <span class="he">קפיצה</span> / Jump
-            </label>
-            <select id="jumpSelect">
-              <option value="">Day…</option>
-            </select>
-          </div>
+      <section class="card" id="statsCard">
+        <div class="card-title">
+          <span class="he">סטטיסטיקה</span> / <span class="en">Stats</span>
         </div>
-        <div id="daysList"></div>
-      </section>
-
-      <div class="footer-note">
-        Progress is stored only in this browser (localStorage).<br />
-        הנתונים נשמרים רק בדפדפן שלך.
-      </div>
-    </main>
-  </div>
-
-  <script>
-    // ===== CONFIG =====
-    const JSON_URL = 'kitzur-cycle.json'; // place this file next to index.html
-    const STORAGE_KEY_PROGRESS = 'kitzur_yomi_progress_v1';
-    const STORAGE_KEY_META = 'kitzur_yomi_meta_v1';
-
-    let cycleData = null;
-    let progress = {}; // { dayNumber: true/false }
-    let meta = {
-      lastCompletedDay: null,
-      streak: 0
-    };
-
-    const daysListEl = document.getElementById('daysList');
-    const jumpSelectEl = document.getElementById('jumpSelect');
-    const streakValueEl = document.getElementById('streakValue');
-    const streakSubEl = document.getElementById('streakSub');
-    const todaySimanEl = document.getElementById('todaySiman');
-    const todayMetaEl = document.getElementById('todayMeta');
-    const todayDayLabelEl = document.getElementById('todayDayLabel');
-    const jumpTodayBtn = document.getElementById('jumpTodayBtn');
-    const resetBtn = document.getElementById('resetBtn');
-
-    let todayDayNumber = null;
-
-    async function init() {
-      loadFromStorage();
-      await loadCycleJson();
-      computeTodayDayNumber();
-      renderDays();
-      populateJumpSelect();
-      updateTodayCard();
-      updateStreakDisplay();
-    }
-
-    function loadFromStorage() {
-      try {
-        const p = localStorage.getItem(STORAGE_KEY_PROGRESS);
-        if (p) progress = JSON.parse(p);
-      } catch (e) {
-        progress = {};
-      }
-      try {
-        const m = localStorage.getItem(STORAGE_KEY_META);
-        if (m) meta = Object.assign(meta, JSON.parse(m));
-      } catch (e) {
-        // ignore
-      }
-    }
-
-    function saveToStorage() {
-      localStorage.setItem(STORAGE_KEY_PROGRESS, JSON.stringify(progress));
-      localStorage.setItem(STORAGE_KEY_META, JSON.stringify(meta));
-    }
-
-    async function loadCycleJson() {
-      const res = await fetch(JSON_URL);
-      if (!res.ok) {
-        todaySimanEl.textContent = 'Error loading cycle JSON';
-        return;
-      }
-      cycleData = await res.json();
-    }
-
-    function computeTodayDayNumber() {
-      if (!cycleData || !cycleData.startDate) return;
-      const start = new Date(cycleData.startDate + 'T00:00:00');
-      const now = new Date();
-      const diffMs = now - start;
-      const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-      const dayNumber = diffDays + 1;
-      if (dayNumber >= 1 && dayNumber <= cycleData.days.length) {
-        todayDayNumber = dayNumber;
-      } else {
-        todayDayNumber = null;
-      }
-    }
-
-    function renderDays() {
-      if (!cycleData) return;
-      daysListEl.innerHTML = '';
-      cycleData.days.forEach((dayObj) => {
-        const dayNum = dayObj.day;
-        const isCompleted = !!progress[dayNum];
-        const isToday = todayDayNumber === dayNum;
-
-        const item = document.createElement('div');
-        item.className = 'day-item' +
-          (isCompleted ? ' completed' : '') +
-          (isToday ? ' today' : '');
-        item.dataset.day = dayNum;
-
-        const checkboxWrap = document.createElement('div');
-        checkboxWrap.className = 'day-checkbox';
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.checked = isCompleted;
-        checkbox.addEventListener('change', () => {
-          toggleDayCompletion(dayNum, checkbox.checked);
-        });
-        checkboxWrap.appendChild(checkbox);
-
-        const content = document.createElement('div');
-        content.className = 'day-content';
-
-        const line = document.createElement('div');
-        line.className = 'day-line';
-
-        const label = document.createElement('div');
-        label.className = 'day-label';
-        label.innerHTML = '<span class="he">יום</span> Day ' + dayNum;
-
-        const siman = document.createElement('div');
-        siman.className = 'day-siman';
-        siman.textContent = dayObj.simanim || '';
-
-        line.appendChild(label);
-        line.appendChild(siman);
-
-        const metaLine = document.createElement('div');
-        metaLine.className = 'day-meta';
-        if (todayDayNumber === dayNum) {
-          metaLine.innerHTML = '<span class="he">היום</span> Today';
-        } else if (todayDayNumber && dayNum < todayDayNumber) {
-          metaLine.innerHTML = '<span class="he">עבר</span> / Past';
-        } else if (todayDayNumber && dayNum > todayDayNumber) {
-          metaLine.innerHTML = '<span class="he">עתיד</span> / Upcoming';
-        } else {
-          metaLine.textContent = '';
-        }
-
-        content.appendChild(line);
-        content.appendChild(metaLine);
-
-        item.appendChild(checkboxWrap);
-        item.appendChild(content);
-
-        daysListEl.appendChild(item);
-      });
-    }
-
-    function populateJumpSelect() {
-      if (!cycleData) return;
-      jumpSelectEl.innerHTML = '<option value="">Day…</option>';
-      cycleData.days.forEach((d) => {
-        const opt = document.createElement('option');
-        opt.value = d.day;
-        opt.textContent = 'Day ' + d.day;
-        jumpSelectEl.appendChild(opt);
-      });
-
-      jumpSelectEl.addEventListener('change', () => {
-        const val = parseInt(jumpSelectEl.value, 10);
-        if (!val) return;
-        scrollToDay(val);
-      });
-    }
-
-    function scrollToDay(dayNum) {
-      const el = daysListEl.querySelector('.day-item[data-day="' + dayNum + '"]');
-      if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    function updateTodayCard() {
-      if (!cycleData || !todayDayNumber) {
-        todaySimanEl.textContent = 'Outside defined cycle range';
-        todayMetaEl.textContent = '';
-        todayDayLabelEl.textContent = '';
-        return;
-      }
-      const dayObj = cycleData.days.find(d => d.day === todayDayNumber);
-      if (!dayObj) return;
-
-      todaySimanEl.textContent = dayObj.simanim || '';
-      todayDayLabelEl.textContent = 'Day ' + todayDayNumber;
-
-      const start = new Date(cycleData.startDate + 'T00:00:00');
-      const today = new Date();
-      const dateStr = today.toLocaleDateString(undefined, {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-      });
-
-      todayMetaEl.innerHTML =
-        '<span class="he">תאריך</span> / Date: <strong>' + dateStr + '</strong>';
-    }
-
-    function recomputeStreak() {
-      if (!cycleData) return;
-      let streak = 0;
-      if (!todayDayNumber) {
-        meta.streak = 0;
-        return;
-      }
-      for (let d = todayDayNumber; d >= 1; d--) {
-        if (progress[d]) {
-          streak++;
-        } else {
-          break;
-        }
-      }
-      meta.streak = streak;
-    }
-
-    function updateStreakDisplay() {
-      streakValueEl.textContent = meta.streak || 0;
-      if (!meta.streak) {
-        streakSubEl.textContent = 'No days completed yet';
-      } else if (meta.streak === 1) {
-        streakSubEl.textContent = '1 day in a row';
-      } else {
-        streakSubEl.textContent = meta.streak + ' days in a row';
-      }
-    }
-
-    function toggleDayCompletion(dayNum, isCompleted) {
-      if (isCompleted) {
-        progress[dayNum] = true;
-        meta.lastCompletedDay = dayNum;
-      } else {
-        delete progress[dayNum];
-        if (meta.lastCompletedDay === dayNum) {
-          meta.lastCompletedDay = null;
-        }
-      }
-      recomputeStreak();
-      saveToStorage();
-      renderDays();
-      updateStreakDisplay();
-    }
-
-    jumpTodayBtn.addEventListener('click', () => {
-      if (todayDayNumber) {
-        scrollToDay(todayDayNumber);
-      }
-    });
-
-    resetBtn.addEventListener('click', () => {
-      if (!confirm('Reset all progress and streak?')) return;
-      progress = {};
-      meta = { lastCompletedDay: null, streak: 0 };
-      saveToStorage();
-      renderDays();
-      updateStreakDisplay();
-    });
-
-    document.addEventListener('DOMContentLoaded', init);
-  </script>
-</body>
-</html>
+        <div class="stats-row">
+          <div class="stats-item">
+            <div class="stats-value" id="statsCompleted">0</div>
+            <div class="stats-label">
+              <span class="he">הושלמו</span> / Completed
+            </div>
+          </div>
+          <div class="stats-item">
+            <div class="stats-value" id="statsPercent">0%</div>
+            <div class="stats-label">
+              <span class="he">אחוז</span> / Percent
